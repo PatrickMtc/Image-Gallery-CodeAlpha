@@ -1,0 +1,186 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layout wrapper ───────────────────────────────────────── */
+.calc-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ── Calculator shell ─────────────────────────────────────── */
+.calc {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  overflow: hidden;
+}
+
+/* ── Display ──────────────────────────────────────────────── */
+.display {
+  padding: 1.5rem 1.25rem 1rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  background: #1a1a2e;
+}
+
+.expr {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  min-height: 18px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.result {
+  font-size: 40px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: right;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -1px;
+  transition: font-size 0.15s ease;
+}
+
+.result.small {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.result.error {
+  font-size: 22px;
+  color: #ff6b6b;
+}
+
+/* ── Button grid ──────────────────────────────────────────── */
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #e5e5ea;
+}
+
+/* ── Base button ──────────────────────────────────────────── */
+.btn {
+  background: #f9f9f9;
+  border: none;
+  padding: 0;
+  height: 68px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: background 0.1s, transform 0.08s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+  background: #efefef;
+}
+
+.btn:active {
+  background: #e0e0e0;
+  transform: scale(0.95);
+}
+
+/* ── Function buttons (AC, +/−, %) ───────────────────────── */
+.btn.fn {
+  background: #e8e8ed;
+  color: #3a3a4a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn.fn:hover {
+  background: #dcdce0;
+}
+
+.btn.fn:active {
+  background: #cecece;
+}
+
+/* ── Operator buttons (÷, ×, −, +) ───────────────────────── */
+.btn.op {
+  background: #f0eeff;
+  color: #534AB7;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.btn.op:hover {
+  background: #e8e5ff;
+}
+
+.btn.op:active {
+  background: #d8d4f8;
+}
+
+.btn.op.active {
+  background: #534AB7;
+  color: #ffffff;
+}
+
+.btn.op.active:hover {
+  background: #4a43a8;
+}
+
+/* ── Equals button ────────────────────────────────────────── */
+.btn.eq {
+  background: #534AB7;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.btn.eq:hover {
+  background: #4a43a8;
+}
+
+.btn.eq:active {
+  background: #3c3589;
+  transform: scale(0.95);
+}
+
+/* ── Zero button (spans 2 columns) ───────────────────────── */
+.btn.zero {
+  grid-column: span 2;
+  font-size: 20px;
+  padding-left: 1.5rem;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+/* ── Keyboard hint ────────────────────────────────────────── */
+.kbd-hint {
+  text-align: center;
+  padding: 10px;
+  font-size: 11px;
+  color: #aaa;
+  background: #f9f9f9;
+  border-top: 1px solid #e5e5ea;
+  letter-spacing: 0.3px;
+}
