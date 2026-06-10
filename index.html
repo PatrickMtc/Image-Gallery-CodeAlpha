@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Photo Gallery</h1>
+    <p id="count-label">Loading…</p>
+  </header>
+
+  <nav class="filter-bar" id="filter-bar" aria-label="Filter photos by category"></nav>
+
+  <main>
+    <div class="gallery-grid" id="gallery-grid" role="list"></div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lb-container">
+      <button class="lb-close" id="lb-close" aria-label="Close viewer">&#x2715;</button>
+      <div class="lb-img-wrap" id="lb-img-wrap">
+        <img id="lb-img" src="" alt="">
+        <button class="lb-arrow left"  id="lb-prev-arrow" aria-label="Previous photo">&#8249;</button>
+        <button class="lb-arrow right" id="lb-next-arrow" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="lb-footer">
+        <div class="lb-meta">
+          <div class="lb-title" id="lb-title"></div>
+          <div class="lb-sub"   id="lb-sub"></div>
+        </div>
+        <div class="lb-controls">
+          <button class="lb-nav-btn" id="lb-prev" aria-label="Previous">&#8249;</button>
+          <span   class="lb-counter" id="lb-counter"></span>
+          <button class="lb-nav-btn" id="lb-next" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+      <div class="lb-dots" id="lb-dots" aria-label="Jump to photo"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
